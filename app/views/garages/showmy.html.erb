@@ -1,0 +1,7 @@
+<h2>My Garages</h2>
+
+<p>Click on a garage to view its details</p>
+
+<% @garages.each do |gar| %>
+	<p><h3><a href="<%= garage_path(gar) %>"><%= gar.name %></a></h3></p>
+<% end %>

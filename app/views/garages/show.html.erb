@@ -1,0 +1,9 @@
+<h2>Show Garage</h2>
+
+<p>Garage name: <%= @garage.name %></p>
+<p>Gragae theme: <%= @garage.theme %></p>
+<p>Garage details: <%= @garage.details %></p>
+
+<p><%= link_to 'Show cars in this garage', car_path %></p>
+<p><%= link_to 'Edit garage', edit_garage_path %></p>
+<p><%= link_to 'Delete garage', @car, :method => :delete, :data => {:confirm => 'Are you sure?'}%></p>

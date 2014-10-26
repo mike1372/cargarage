@@ -1,0 +1,20 @@
+NOTES ON QUESTIONS, TO DO AND EXTENDED FUNCTIONALITY
+====================================================
+
+QUESTIONS
+---------
+How to add photos and not just links to photos on the web?
+
+TO DO
+-----
+Forgot to add a car name column to the car table
+Misspelled transmission but since all references to this column are also misspelled it still works
+Need to find out how to DRY up the forms again
+Need to add a page to create an account
+Add flash errors when users get login details wrong or fail to fill out all form details
+Hide all buttons whilst logged out: only show home, about
+
+EXTENSIONS
+----------
+A user should be able to search for a car or garage by various criteria
+A user shoule be ble to leave comments about cars

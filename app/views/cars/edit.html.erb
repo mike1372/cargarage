@@ -1,0 +1,44 @@
+<h2>Edit Car</h2>
+
+<%= form_for @car do |f| %>
+
+<p>
+	<%= f.label :make, 'Car make' %>
+	<%= f.text_field :make %>
+</p>
+<p>
+	<%= f.label :model, 'Car model' %>
+	<%= f.text_field :model %>
+</p>
+<p>
+	<%= f.label :year, 'Year of manufacture' %>
+	<%= f.text_field :year %>
+</p>
+<p>
+	<%= f.label :colour, 'Colour' %>
+	<%= f.text_field :colour %>
+</p>
+<p>
+	<%= f.label :body_type, 'Body type' %>
+	<%= f.text_field :body_type %>
+</p>
+<p>
+	<%= f.label :engine, 'Engine details' %>
+	<%= f.text_field :engine %>
+</p>
+<p>
+	<%= f.label :transmission, 'Transmission details' %>
+	<%= f.text_field :transmission %>
+</p>
+<p>
+	<%= f.label :wheels_tyres, 'Wheel and tyre details' %>
+	<%= f.text_field :wheels_tyres %>
+</p>
+<p>
+	<%= f.label :other_details, 'Other details' %>
+	<%= f.text_field :other_details %>
+</p>
+
+<button>Update</button>
+
+<% end %>

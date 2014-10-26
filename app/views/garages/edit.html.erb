@@ -1,0 +1,20 @@
+<h2>Edit Garage</h2>
+
+<%= form_for @garage do |f| %>
+
+<p>
+	<%= f.label :name, 'Garage name' %>
+	<%= f.text_field :name %>
+</p>
+<p>
+	<%= f.label :theme, 'Garage theme' %>
+	<%= f.text_field :theme %>
+</p>
+<p>
+	<%= f.label :details, 'Garage details' %>
+	<%= f.text_field :details %>
+</p>
+
+<button>Update</button>
+
+<% end %>

@@ -1,0 +1,15 @@
+<h2>Show Car</h2>
+
+<p>Car make: <%= @car.make %></p>
+<p>Car model: <%= @car.model %></p>
+<p>Year of manufacture: <%= @car.year %></p>
+<p>Colour: <%= @car.colour %></p>
+<p>Body type: <%= @car.body_type %></p>
+<p>Engine details: <%= @car.engine %></p>
+<p>Transmisison details: <%= @car.transmisison %></p>
+<p>Wheel and tyre details: <%= @car.wheels_tyres %></p>
+<p>Other details: <%= @car.other_details %></p>
+
+<p><%= link_to 'Show garages this car resides in', garage_path %></p>
+<p><%= link_to 'Edit car', edit_car_path %></p>
+<p><%= link_to 'Delete car', @car, :method => :delete, :data => {:confirm => 'Are you sure?'}%></p>
