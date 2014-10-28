@@ -1,0 +1,5 @@
+<h2>Cars in this Garage</h2>
+
+<% @cars_in_garage.each do |car| %>
+  <p><h3><a href="<%= car_path(car) %>"><%= car.make %></a></h3></p>
+<% end %>

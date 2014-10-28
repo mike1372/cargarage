@@ -11,5 +11,7 @@
 <p>Other details: <%= @car.other_details %></p>
 
 <p><%= link_to 'Show garages this car resides in', garage_path %></p>
-<p><%= link_to 'Edit car', edit_car_path %></p>
-<p><%= link_to 'Delete car', @car, :method => :delete, :data => {:confirm => 'Are you sure?'}%></p>
+<% if @car.user_id == @current_user.id %>
+	<p><%= link_to 'Edit car', edit_car_path %></p>
+	<p><%= link_to 'Delete car', @car, :method => :delete, :data => {:confirm => 'Are you sure?'}%></p>
+<% end %>

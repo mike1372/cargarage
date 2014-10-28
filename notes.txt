@@ -7,14 +7,25 @@ How to add photos and not just links to photos on the web?
 
 TO DO
 -----
+Photos - need to know how to add these, then show all cars by their primary photo
+Add a set of photos for garages for users to select
+Prevent a car being moved into a garage that is already there
+Allow the user to be able to change their password
+Need to find out how to DRY up the forms again - see the cookbok example
+Add flash errors when users get login details wrong or fail to fill out all form details
+User deletion: add a separate page to confirm
+
+ISSUES
+------
+People can add an account with a blank username - is there proper error checking on this feature?
 Forgot to add a car name column to the car table
 Misspelled transmission but since all references to this column are also misspelled it still works
-Need to find out how to DRY up the forms again
-Need to add a page to create an account
-Add flash errors when users get login details wrong or fail to fill out all form details
-Hide all buttons whilst logged out: only show home, about
+Get the notices working
 
 EXTENSIONS
 ----------
 A user should be able to search for a car or garage by various criteria
-A user shoule be ble to leave comments about cars
+A user shoule be able to leave comments about cars
+Add a forgot password (accessible whilst logged out - show on the login page) link that emails the user a link to reset their password
+
+Note raise params.inspect

@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 	skip_before_action :authenticate, :only => [:new, :create]
 
-	def index
-		@users = User.all
+	def show
+		@user = User.find(params[:id])
 	end
 
 	def new
@@ -10,7 +10,11 @@ class UsersController < ApplicationController
 	end
 
 	def create
+		# Change this to use user_params (don;t forget to add the password info)
 		@user = User.new
+		@user.first_name = params[:first_name]
+		@user.last_name = params[:last_name]
+		@user.email = params[:email]
 		@user.username = params[:username]
 		@user.password = params[:password]
 		@user.password_confirmation = params[:password_confirmation]
@@ -21,5 +25,36 @@ class UsersController < ApplicationController
 		else
 			render :new
 		end
+	end
+
+	def edit
+		@user = User.find(params[:id])
+	end
+
+	def update
+		current_user.update(user_params)
+		redirect_to user_path :notice => 'Details updated successfully'
+	end
+
+	def pass
+	end
+
+	def password #I have a routung problem - cannot get here
+		#raise params.inspect
+		@current_user.password = params[:new_password]
+		@current_user.password_confirmation = params[:password_confirmation]
+		redirect_to user_path :notice => 'Password updated successfully'
+	end
+
+	def destroy
+		@user = User.find(params[:id])
+		@user.destroy
+		redirect_to root_path :notice => 'Your account has been deleted successfully'
+	end
+
+	private
+
+	def user_params
+		params.require(:user).permit(:first_name, :last_name, :email, :username)
 	end
 end

@@ -4,12 +4,37 @@ class GaragesController < ApplicationController
 		@garage = Garage.find(params[:id])
 	end
 
-	def showall
+	def showall # Change this to index
 		@garages = Garage.all
 	end
 
 	def showmy
-		@garages = Garage.where(:user_id => params[:id])
+		@garages = Garage.where(:user_id => @current_user.id)
+	end
+
+	def move
+		@cars = Car.where(:user_id => @current_user.id)
+		@garage = Garage.find params[:garage_id]
+	end
+
+	def movein
+		garage = Garage.find(params[:car][:garage_id])
+		car = Car.find(params[:car][:car_ids])
+		garage.cars << car
+		garage.save
+		redirect_to garage_path(garage.id), :notice => 'Car moved in successfully'
+	end
+
+	def moveo
+		@cars = Car.where(:user_id => params[:garage_id])
+		@garage = Garage.find params[:garage_id]
+	end
+
+	def moveout
+		garage = Garage.find(params[:car][:garage_id])
+		car = Car.find(params[:car][:car_ids])
+		garage.cars.delete(car)
+		redirect_to garage_path(garage.id), :notice => 'Car moved out successfully'
 	end
 
 	def new
@@ -18,9 +43,10 @@ class GaragesController < ApplicationController
 
 	def create
 		@garage = Garage.new(garage_params)
+		@garage.user_id = @current_user.id
 
 		if @garage.save
-			redirect_to root_path, :notice => 'New garage created successfully'
+			redirect_to garage_path(@garage.id), :notice => 'New garage created successfully'
 		else
 			render :new
 		end

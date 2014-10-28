@@ -11,20 +11,25 @@
 	<ul>
 		<li><%= link_to 'Home', root_path %></li>
 		<li><%= link_to 'About', '/about' %></li>
-		<li><%= link_to 'New Car', new_car_path %></li>
-		<li><%= link_to 'New Garage', new_garage_path %></li>
-		<li><%= link_to 'Show All Cars', show_all_cars_path %></li>
-		<li><%= link_to 'Show All Garages', show_all_garages_path %></li>
-		<li><%= link_to 'Show My Cars', show_my_cars_path %></li>
-		<li><%= link_to 'Show My Garages', show_my_garages_path %></li>
-		<li><%= link_to 'Sign Up', sign_up_path %></li>
 
-		<% if logged_in? %>  
-	  <p><%= link_to 'logout', login_path, :method => :delete, :data => { :confirm => 'are you sure?' } %></p>
+		<% if logged_in? %> 
+			<li><%= link_to 'New Car', new_car_path %></li>
+			<li><%= link_to 'New Garage', new_garage_path %></li>
+			<li><%= link_to 'Show All Cars', show_all_cars_path %></li>
+			<li><%= link_to 'Show All Garages', show_all_garages_path %></li>
+			<li><%= link_to 'Show My Cars', show_my_cars_path %></li>
+			<li><%= link_to 'Show My Garages', show_my_garages_path %></li>
+			<li><%= link_to 'My Account', user_path(current_user.id) %></li>
+		  <li><%= link_to 'logout', login_path, :method => :delete, :data => { :confirm => 'are you sure?' } %></li>
 	  <% else %>
-	  <p><%= link_to 'login', login_path %></p>
+	  	<li><%= link_to 'Sign Up', sign_up_path %></li>
+	  	<li><%= link_to 'login', login_path %></li>
 	  <% end %>
 	</ul>
+
+	<% if logged_in? %>
+		<p>Welcome &nbsp<%= current_user.username %><p>
+	<% end %>
 
 <%= yield %>
 

@@ -4,12 +4,18 @@ class CarsController < ApplicationController
 		@car = Car.find(params[:id])
 	end
 
-	def showall
+	def showall # Change this to index
 		@cars = Car.all
 	end
 
 	def showmy
-		@cars = Car.where(:user_id => params[:id])
+		@cars = Car.where(:user_id => @current_user.id)
+	end
+
+	def showgarage
+		cars = Car.all
+		garage = Garage.find(params[:garage_id])
+		@cars_in_garage = garage.cars
 	end
 
 	def new
@@ -18,10 +24,10 @@ class CarsController < ApplicationController
 
 	def create
 		@car = Car.new(car_params)
+		@car.user_id = @current_user.id
 
 		if @car.save
-			params.inspect
-			redirect_to car_path, :notice => 'New car created successfully'
+			redirect_to car_path(@car.id), :notice => 'New car created successfully'
 		else
 			render :new
 		end
@@ -34,7 +40,7 @@ class CarsController < ApplicationController
 	def update
 		@car = Car.find(params[:id])
 		@car.update(car_params)
-		redirect_to cars_path :notice => 'Car updated successfully'
+		redirect_to car_path :notice => 'Car updated successfully'
 	end
 
 	def destroy
