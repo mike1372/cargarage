@@ -43,7 +43,8 @@ class UsersController < ApplicationController
 		#raise params.inspect
 		@current_user.password = params[:new_password]
 		@current_user.password_confirmation = params[:password_confirmation]
-		redirect_to user_path :notice => 'Password updated successfully'
+		@current_user.save
+		redirect_to user_path(@current_user.id), :notice => 'Password updated successfully'
 	end
 
 	def destroy

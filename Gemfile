@@ -37,6 +37,11 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# For handling of pictures
+gem 'carrierwave'
+gem 'cloudinary'
+gem 'rails_12factor', group: :production
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

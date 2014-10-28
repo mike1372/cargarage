@@ -28,7 +28,7 @@
 	</ul>
 
 	<% if logged_in? %>
-		<p>Welcome &nbsp<%= current_user.username %><p>
+		<p>Welcome, &nbsp<%= current_user.first_name %><p>
 	<% end %>
 
 <%= yield %>

@@ -20,6 +20,10 @@ class GaragesController < ApplicationController
 	def movein
 		garage = Garage.find(params[:car][:garage_id])
 		car = Car.find(params[:car][:car_ids])
+
+		# garage.cars.each {|car| car.id} get this working - need to know how to iterate through the cars to compare
+		# the selected car to ensure it is not in the garage
+
 		garage.cars << car
 		garage.save
 		redirect_to garage_path(garage.id), :notice => 'Car moved in successfully'

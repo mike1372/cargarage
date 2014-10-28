@@ -3,5 +3,6 @@
 <p>Click on a car to view its details</p>
 
 <% @cars.each do |car| %>
-	<p><h3><a href="<%= car_path(car) %>"><%= car.make %></a></h3></p>
+	<p><h3><a href="<%= car_path(car) %>"><%= car.name %></a></h3></p>
+	<p><img src="<%= car.primary_picture %>" alt=""></p>
 <% end %>

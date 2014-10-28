@@ -3,6 +3,10 @@
 <%= form_for @car do |f| %>
 
 <p>
+	<%= f.label :name, 'Car name' %>
+	<%= f.text_field :name %>
+</p>
+<p>
 	<%= f.label :make, 'Car make' %>
 	<%= f.text_field :make %>
 </p>
@@ -37,6 +41,10 @@
 <p>
 	<%= f.label :other_details, 'Other details' %>
 	<%= f.text_field :other_details %>
+</p>
+<p>
+	<%= f.label :primary_picture, 'Primary picture' %>
+	<%= f.file_field :primary_picture %>
 </p>
 
 <button>Create</button>

@@ -3,29 +3,48 @@ NOTES ON QUESTIONS, TO DO AND EXTENDED FUNCTIONALITY
 
 QUESTIONS
 ---------
-How to add photos and not just links to photos on the web?
+Ask about how to add test data again
+Getting the correct data out of the join when adding cars to a garage?
 
 TO DO
 -----
-Photos - need to know how to add these, then show all cars by their primary photo
 Add a set of photos for garages for users to select
 Prevent a car being moved into a garage that is already there
-Allow the user to be able to change their password
 Need to find out how to DRY up the forms again - see the cookbok example
 Add flash errors when users get login details wrong or fail to fill out all form details
 User deletion: add a separate page to confirm
+Change showall to index
+
+NOTE - PROJECT SPEC NEEDS THE FOLLOWING:
+Use an API
+Handle invalid data
+Get README done in markdown
+Correct documentation - add a Resources section
+Go through code and comment/clean up where needed
 
 ISSUES
 ------
 People can add an account with a blank username - is there proper error checking on this feature?
-Forgot to add a car name column to the car table
 Misspelled transmission but since all references to this column are also misspelled it still works
-Get the notices working
+Get the :notices working
 
 EXTENSIONS
 ----------
 A user should be able to search for a car or garage by various criteria
-A user shoule be able to leave comments about cars
+A user should be able to leave comments about cars
 Add a forgot password (accessible whilst logged out - show on the login page) link that emails the user a link to reset their password
+Add a model for adding many pictures for cars (one-many relationship between a car and its pictures)
+Add garage pictures to allow users to customise thier garages
 
 Note raise params.inspect
+
+
+
+Excerpt from the project spec:
+README.md
+Projects need a readme file in markdown explaining their project. Explain your concept and data model. What problem are you solving? What gems and/or APIs are you using?
+This needs a how and why of what they wanted to solve, how they built, problems, tech used.
+This file should include the elements of your project plan.
+Add your list of resources, research, and documentation links to this file.
+If you're including a separate file or folder for your data model, put it in a file or folder called data_model with the proper extensions.
+If you're including a separate file or folder for your wireframes, put it in a file or folder called wireframe with the proper extensions.
