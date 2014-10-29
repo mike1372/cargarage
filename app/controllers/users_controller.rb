@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		# Change this to use user_params (don;t forget to add the password info)
+		# Change this to use user_params (don't forget to add the password info in the user_params def below)
 		@user = User.new
 		@user.first_name = params[:first_name]
 		@user.last_name = params[:last_name]

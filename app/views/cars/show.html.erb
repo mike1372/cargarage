@@ -12,6 +12,24 @@
 <p>Wheel and tyre details: <%= @car.wheels_tyres %></p>
 <p>Other details: <%= @car.other_details %></p>
 
+<h3>Comments for this car</h3>
+
+<% @comments.each do |c| %>
+	<p><%= c.comment_details %></p>
+<% end %>
+
+<h3>Add a comment</h3>
+
+<p>Please note comments cannot be edited or deleted later so write carefully!</p>
+
+<%= form_for @comment do |f| %>
+	<p>
+		<%= f.text_area :comment_details, cols: 100, rows: 10%>
+		<%= f.hidden_field :car_id, :value => @car.id %>
+	</p>
+	<button>Post comment</button>
+<% end %>
+
 <p><%= link_to 'Show garages this car resides in', garage_path %></p>
 <% if @car.user_id == @current_user.id %>
 	<p><%= link_to 'Edit car', edit_car_path %></p>

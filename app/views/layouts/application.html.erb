@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script type="text/javascript" src="http://www.carqueryapi.com/js/jquery.min.js"></script>
+	<script type="text/javascript" src="http://www.carqueryapi.com/js/carquery.0.3.3.js"></script>
 </head>
 <body>
 
@@ -21,6 +23,7 @@
 			<li><%= link_to 'Show My Garages', show_my_garages_path %></li>
 			<li><%= link_to 'My Account', user_path(current_user.id) %></li>
 		  <li><%= link_to 'logout', login_path, :method => :delete, :data => { :confirm => 'are you sure?' } %></li>
+		  <li><%= link_to 'Search for popular car details', "" %></li>
 	  <% else %>
 	  	<li><%= link_to 'Sign Up', sign_up_path %></li>
 	  	<li><%= link_to 'login', login_path %></li>

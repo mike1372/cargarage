@@ -2,7 +2,7 @@
 
 <h3>Please select a car to move out of the garage</h3>
 
-<%= form_tag do %>
+<%= form_tag moveout_path do %>
 <%= collection_radio_buttons :car, :car_ids, @garage.cars, :id, :name %>
 <%= hidden_field_tag :garage_id, @garage.id, :name => 'car[garage_id]' %>
 <button>Select</button>

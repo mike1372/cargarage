@@ -4,16 +4,17 @@ NOTES ON QUESTIONS, TO DO AND EXTENDED FUNCTIONALITY
 QUESTIONS
 ---------
 Ask about how to add test data again
-Getting the correct data out of the join when adding cars to a garage?
+* Getting the correct data out of the join when adding cars to a garage (for checking car is already in garage)?
+* Comments - still having issues getting @car.id passed in
 
 TO DO
 -----
 Add a set of photos for garages for users to select
-Prevent a car being moved into a garage that is already there
 Need to find out how to DRY up the forms again - see the cookbok example
 Add flash errors when users get login details wrong or fail to fill out all form details
 User deletion: add a separate page to confirm
 Change showall to index
+Fix transmisison
 
 NOTE - PROJECT SPEC NEEDS THE FOLLOWING:
 Use an API
@@ -25,8 +26,6 @@ Go through code and comment/clean up where needed
 ISSUES
 ------
 People can add an account with a blank username - is there proper error checking on this feature?
-Misspelled transmission but since all references to this column are also misspelled it still works
-Get the :notices working
 
 EXTENSIONS
 ----------
@@ -34,11 +33,20 @@ A user should be able to search for a car or garage by various criteria
 A user should be able to leave comments about cars
 Add a forgot password (accessible whilst logged out - show on the login page) link that emails the user a link to reset their password
 Add a model for adding many pictures for cars (one-many relationship between a car and its pictures)
-Add garage pictures to allow users to customise thier garages
+Add garage pictures to allow users to customise their garages
 
 Note raise params.inspect
 
-
+DAILY DETAILS
+-------------
+THU - thought of idea and prepared sales pitch
+FRI - presented pitch to class
+SAT - Worked on models, decided to change idea to something simpler, completed modelling
+SUN - created database and coded all basic site pages
+MON - added functionality for complex operations where releations were needed between models
+TUE - completed main site functionality, added account pages, added photo uploading, added comments (not quite working)
+WED - fix comments function, add API (login), seed databse test data, like to add multiple photos (new model)
+THU - complete (invalid) data testing, do CSS in Rails recap and then style the site, complete documentation and code cleanup
 
 Excerpt from the project spec:
 README.md

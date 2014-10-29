@@ -2,6 +2,8 @@ class CarsController < ApplicationController
 
 	def show
 		@car = Car.find(params[:id])
+		@comments = Comment.where(:car_id => @car.id)
+		@comment = Comment.new
 	end
 
 	def showall # Change this to index

@@ -2,8 +2,8 @@
 
 <h3>Please select a car to move into the garage</h3>
 
-<%= form_tag do %>
-<%= collection_radio_buttons :car, :car_ids, @current_user.cars, :id, :name %>
+<%= form_tag move_path do %>
+<%= collection_radio_buttons :garage, :car_ids, @current_user.cars, :id, :name %>
 <%= hidden_field_tag :garage_id, @garage.id, :name => 'car[garage_id]' %>
 <button>Select</button>
 <% end %>
