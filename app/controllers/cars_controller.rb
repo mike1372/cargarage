@@ -4,6 +4,8 @@ class CarsController < ApplicationController
 		@car = Car.find(params[:id])
 		@comments = Comment.where(:car_id => @car.id)
 		@comment = Comment.new
+		@pictures = Morepicture.where(:car_id => @car.id)
+		@picture = Morepicture.new
 	end
 
 	def showall # Change this to index
@@ -16,8 +18,8 @@ class CarsController < ApplicationController
 
 	def showgarage
 		cars = Car.all
-		garage = Garage.find(params[:garage_id])
-		@cars_in_garage = garage.cars
+		@garage = Garage.find(params[:garage_id])
+		@cars_in_garage = @garage.cars
 	end
 
 	def new
@@ -31,6 +33,7 @@ class CarsController < ApplicationController
 		if @car.save
 			redirect_to car_path(@car.id), :notice => 'New car created successfully'
 		else
+			flash.notice = 'Car not created, please try again'
 			render :new
 		end
 	end

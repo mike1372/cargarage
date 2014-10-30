@@ -4,24 +4,33 @@ NOTES ON QUESTIONS, TO DO AND EXTENDED FUNCTIONALITY
 QUESTIONS
 ---------
 Ask about how to add test data again
-* Getting the correct data out of the join when adding cars to a garage (for checking car is already in garage)?
-* Comments - still having issues getting @car.id passed in
 
 TO DO
 -----
 Add a set of photos for garages for users to select
 Need to find out how to DRY up the forms again - see the cookbok example
-Add flash errors when users get login details wrong or fail to fill out all form details
 User deletion: add a separate page to confirm
 Change showall to index
-Fix transmisison
+Test all flash messages
+Show primary car pictures in each garage (small size)
+Get page reload working for picture deletion
+Make pictures clickable to show a full size image
+Add some back buttons
 
 NOTE - PROJECT SPEC NEEDS THE FOLLOWING:
-Use an API
 Handle invalid data
 Get README done in markdown
 Correct documentation - add a Resources section
 Go through code and comment/clean up where needed
+
+
+CSS ISSUES
+----------
+Show car page - one button not showing text and choose file - how to style, also get to centre
+Change text colour for top buttons and form boxes
+Car images on show page all over the place
+Main page image does not load
+
 
 ISSUES
 ------
@@ -30,9 +39,7 @@ People can add an account with a blank username - is there proper error checking
 EXTENSIONS
 ----------
 A user should be able to search for a car or garage by various criteria
-A user should be able to leave comments about cars
 Add a forgot password (accessible whilst logged out - show on the login page) link that emails the user a link to reset their password
-Add a model for adding many pictures for cars (one-many relationship between a car and its pictures)
 Add garage pictures to allow users to customise their garages
 
 Note raise params.inspect
@@ -45,7 +52,7 @@ SAT - Worked on models, decided to change idea to something simpler, completed m
 SUN - created database and coded all basic site pages
 MON - added functionality for complex operations where releations were needed between models
 TUE - completed main site functionality, added account pages, added photo uploading, added comments (not quite working)
-WED - fix comments function, add API (login), seed databse test data, like to add multiple photos (new model)
+WED - fixed comments functionality, added API (car details), added multiple photos (new model)
 THU - complete (invalid) data testing, do CSS in Rails recap and then style the site, complete documentation and code cleanup
 
 Excerpt from the project spec:

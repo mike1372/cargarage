@@ -1,23 +1,17 @@
 <h2>Change Account Details</h2>
 
 <%= form_for @user do |f| %>
-	<p>
-		<%= label_tag :first_name %>
-		<%= f.text_field :first_name %>
-	</p>
-	<p>
-		<%= label_tag :last_name %>
-		<%= f.text_field :last_name %>
-	</p>
-	<p>
-		<%= label_tag :email %>
-		<%= f.text_field :email %>
-	</p>
-	<p>
-		<%= label_tag :username %>
-		<%= f.text_field :username %>
-	</p>
+	<p><%= label_tag :first_name %></p>
+	<p class="darken_text"><%= f.text_field :first_name %></p>
 
-	<button>Update</button>
+	<p><%= label_tag :last_name %></p>
+	<p class="darken_text"><%= f.text_field :last_name %></p>
 
+	<p><%= label_tag :email %></p>
+	<p class="darken_text"><%= f.text_field :email %></p>
+
+	<p><%= label_tag :username %></p>
+	<p class="darken_text"><%= f.text_field :username %></p>
+
+	<button class="btn btn-warning">Update</button>
 <% end %>

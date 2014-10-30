@@ -3,9 +3,9 @@
 <%= form_for @comment do |f| %>
 	<p>
 		<%= f.label :comment_details %>
-		<%= f.text_field :comment_details %>
+		<div class="darken_text"><%= f.text_field :comment_details %></div>
 	</p>
-	<button>Post comment</button>
+	<button class="btn btn-success">Post comment</button>
 <% end %>
 
 <!-- Note this page is no longer needed - this code has been added to the Show Car page instead -->

@@ -1,7 +1,14 @@
 <h2>My Garages</h2>
 
-<p>Click on a garage to view its details</p>
+<% if @garages.first %>
+	<p>Click on a garage to view its details</p>
+<% end %>
 
-<% @garages.each do |gar| %>
-	<p><h3><a href="<%= garage_path(gar) %>"><%= gar.name %></a></h3></p>
+<% if @garages.first %>
+	<% @garages.each do |gar| %>
+		<p><h3><a href="<%= garage_path(gar) %>"><%= gar.name %></a></h3></p>
+	<% end %>
+<% else %>
+	<p>You do not have any garages yet</p>
+	<button class="btn btn-success btn-lg"><%= link_to 'New Garage', new_garage_path %></button>
 <% end %>

@@ -21,12 +21,13 @@ class GaragesController < ApplicationController
 		@garage = Garage.find(params[:car][:garage_id])
 		@car = Car.find(params[:garage][:car_ids])
 
-		if !@garage.cars.include?(@car)
+		if !@garage.cars.include?(@car) # Ensure the car is not alredy in the garage
 			@garage.cars << @car
 			@garage.save
 			redirect_to garage_path(@garage.id), :notice => 'Car moved in successfully'
 		else
-			render :move, :notice => 'This car is aready in this garage'
+			flash.notice = 'This car is aready in this garage, please choose another car'
+			render :move
 		end
 	end
 
@@ -53,6 +54,7 @@ class GaragesController < ApplicationController
 		if @garage.save
 			redirect_to garage_path(@garage.id), :notice => 'New garage created successfully'
 		else
+			flash.notice = 'Garage not created, please try again'
 			render :new
 		end
 	end

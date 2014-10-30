@@ -1,6 +1,12 @@
 <h2>Cars in this Garage</h2>
 
-<% @cars_in_garage.each do |car| %>
-  <p><h3><a href="<%= car_path(car) %>"><%= car.name %></a></h3></p>
-  <p><img src="<%= car.primary_picture %>" alt=""></p>
+<% if @cars_in_garage.first %>
+	<% @cars_in_garage.each do |car| %>
+	  <div class="size1"><a href="<%= car_path(car) %>"><img src="<%= car.primary_picture %>"></a></div>
+	<% end %>
+<% else %>
+	<p>There are no cars in this garage</p>
+	<% if @garage.user_id == @current_user.id %>
+		<button class="btn btn-default btn-lg"><%= link_to 'Move a car into this garage', move_path(:garage_id => @garage.id) %></button>
+	<% end %>
 <% end %>

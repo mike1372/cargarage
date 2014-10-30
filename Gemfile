@@ -42,6 +42,9 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'rails_12factor', group: :production
 
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

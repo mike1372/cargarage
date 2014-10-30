@@ -1,20 +1,18 @@
 <h2>Edit Garage</h2>
 
-<%= form_for @garage do |f| %>
+<div class="underlay1 well">
+	<%= form_for @garage do |f| %>
 
-<p>
-	<%= f.label :name, 'Garage name' %>
-	<%= f.text_field :name %>
-</p>
-<p>
-	<%= f.label :theme, 'Garage theme' %>
-	<%= f.text_field :theme %>
-</p>
-<p>
-	<%= f.label :details, 'Garage details' %>
-	<%= f.text_field :details %>
-</p>
+	<p><%= f.label :name, 'Garage name' %></p>
+	<p class="darken_text"><%= f.text_area :name, cols: 100, rows: 1 %></p>
 
-<button>Update</button>
+	<p><%= f.label :theme, 'Garage theme' %></p>
+	<p class="darken_text"><%= f.text_area :theme, cols: 100, rows: 1 %></p>
 
-<% end %>
+	<p><%= f.label :details, 'Garage details' %></p>
+	<p class="darken_text"><%= f.text_area :details, cols: 100, rows: 10 %></p>
+
+	<button class="btn btn-primary">Update</button>
+
+	<% end %>
+</div>

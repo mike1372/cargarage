@@ -1,9 +1,15 @@
-<h2>Car Move</h2>
+<h2>Move Car In</h2>
 
-<h3>Please select a car to move into the garage</h3>
-
-<%= form_tag move_path do %>
-<%= collection_radio_buttons :garage, :car_ids, @current_user.cars, :id, :name %>
-<%= hidden_field_tag :garage_id, @garage.id, :name => 'car[garage_id]' %>
-<button>Select</button>
+<% if true # @cars.first should be here but crashes the app when trying to add the same car again%>
+	<div class="underlay1 well">
+		<h3>Please select a car to move into the garage</h3>
+		<%= form_tag move_path do %>
+		<%= collection_radio_buttons :garage, :car_ids, @current_user.cars, :id, :name %>
+		<%= hidden_field_tag :garage_id, @garage.id, :name => 'car[garage_id]' %>
+		<button class="btn btn-primary">Select</button>
+		<% end %>
+	</div>
+<% else %>
+	<p>You have no cars to move</p>
+	<button class="btn btn-primary btn-lg"><%= link_to 'New Car', new_car_path %></button>
 <% end %>

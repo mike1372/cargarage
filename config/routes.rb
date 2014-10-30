@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   root 'pages#index'
   get '/about' => 'pages#about'
+  get '/lookup' => 'pages#lookup'
 
   get '/change_password' => 'users#pass'
   post '/change_password' => 'users#password'
@@ -30,4 +31,8 @@ Rails.application.routes.draw do
   resources :cars
   resources :users
   resources :comments
+  resources :pages
+  resources :morepictures
+
+  # Note some of these routes may now be redundant - to be checked and cleaned up
 end

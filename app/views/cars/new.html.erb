@@ -1,52 +1,42 @@
 <h2>New Car</h2>
 
-<%= form_for @car do |f| %>
+<div class="underlay1 well">
+	<%= form_for @car do |f| %>
 
-<p>
-	<%= f.label :name, 'Car name' %>
-	<%= f.text_field :name %>
-</p>
-<p>
-	<%= f.label :make, 'Car make' %>
-	<%= f.text_field :make %>
-</p>
-<p>
-	<%= f.label :model, 'Car model' %>
-	<%= f.text_field :model %>
-</p>
-<p>
-	<%= f.label :year, 'Year of manufacture' %>
-	<%= f.text_field :year %>
-</p>
-<p>
-	<%= f.label :colour, 'Colour' %>
-	<%= f.text_field :colour %>
-</p>
-<p>
-	<%= f.label :body_type, 'Body type' %>
-	<%= f.text_field :body_type %>
-</p>
-<p>
-	<%= f.label :engine, 'Engine details' %>
-	<%= f.text_field :engine %>
-</p>
-<p>
-	<%= f.label :transmisison, 'Transmission details' %>
-	<%= f.text_field :transmisison %>
-</p>
-<p>
-	<%= f.label :wheels_tyres, 'Wheel and tyre details' %>
-	<%= f.text_field :wheels_tyres %>
-</p>
-<p>
-	<%= f.label :other_details, 'Other details' %>
-	<%= f.text_field :other_details %>
-</p>
-<p>
-	<%= f.label :primary_picture, 'Primary picture' %>
-	<%= f.file_field :primary_picture %>
-</p>
+	<p><%= f.label :name, 'Car name' %></p>
+	<p class="darken_text"><%= f.text_area :name, cols: 100, rows: 1 %></p>
 
-<button>Create</button>
+	<p><%= f.label :make, 'Car make' %></p>
+	<p class="darken_text"><%= f.text_area :make, cols: 100, rows: 1 %></p>
 
-<% end %>
+	<p><%= f.label :moddel, 'Car model' %></p>
+	<p class="darken_text"><%= f.text_area :moddel, cols: 100, rows: 1 %></p>
+
+	<p><%= f.label :year, 'Year of manufacture' %></p>
+	<p class="darken_text"><%= f.text_area :year, cols: 100, rows: 1 %></p>
+
+	<p><%= f.label :colour, 'Colour' %></p>
+	<p class="darken_text"><%= f.text_area :colour, cols: 100, rows: 1 %></p>
+
+	<p><%= f.label :body_type, 'Body type' %></p>
+	<p class="darken_text"><%= f.text_area :body_type, cols: 100, rows: 1 %></p>
+
+	<p><%= f.label :engine, 'Engine details' %></p>
+	<p class="darken_text"><%= f.text_area :engine, cols: 100, rows: 1 %></p>
+
+	<p><%= f.label :transmission, 'Transmission details' %></p>
+	<p class="darken_text"><%= f.text_area :transmission, cols: 100, rows: 1 %></p>
+
+	<p><%= f.label :wheels_tyres, 'Wheel and tyre details' %></p>
+	<p class="darken_text"><%= f.text_area :wheels_tyres, cols: 100, rows: 1 %></p>
+
+	<p><%= f.label :other_details, 'Other details' %></p>
+	<p class="darken_text"><%= f.text_area :other_details, cols: 100, rows: 10 %></p>
+
+	<p><%= f.label :primary_picture, 'Primary picture' %></p>
+	<p><%= f.file_field :primary_picture %></p>
+
+	<button class="btn btn-success">Create</button>
+
+	<% end %>
+</div>

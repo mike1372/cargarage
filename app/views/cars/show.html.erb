@@ -1,37 +1,71 @@
-<h2>Show Car</h2>
+<h2><%= @car.name %></h2>
 
-<p><img src="<%= @car.primary_picture %>" alt=""></p>
-<p>Car name: <%= @car.name %></p>
-<p>Car make: <%= @car.make %></p>
-<p>Car model: <%= @car.model %></p>
-<p>Year of manufacture: <%= @car.year %></p>
-<p>Colour: <%= @car.colour %></p>
-<p>Body type: <%= @car.body_type %></p>
-<p>Engine details: <%= @car.engine %></p>
-<p>Transmisison details: <%= @car.transmisison %></p>
-<p>Wheel and tyre details: <%= @car.wheels_tyres %></p>
-<p>Other details: <%= @car.other_details %></p>
+<div class="border"><img src="<%= @car.primary_picture %>"></div>
 
-<h3>Comments for this car</h3>
-
-<% @comments.each do |c| %>
-	<p><%= c.comment_details %></p>
+<% @pictures.each do |p| %>
+	<div class ="size1">
+		<img src="<%= p.extra_picture %>">
+		<% if @car.user_id == @current_user.id %>
+			<button class="btn btn-danger btn-xs"><%= link_to 'Delete picture', p, :method => :delete, :data => {:confirm => 'Are you sure?'}%></button>
+		<% end %>
+	</div>
 <% end %>
 
-<h3>Add a comment</h3>
+<div class="underlay1 well">
+	<h3>Details for this car</h3>
+	<p>Car make: <%= @car.make %></p>
+	<p>Car model: <%= @car.moddel %></p>
+	<p>Year of manufacture: <%= @car.year %></p>
+	<p>Colour: <%= @car.colour %></p>
+	<p>Body type: <%= @car.body_type %></p>
+	<p>Engine details: <%= @car.engine %></p>
+	<p>Transmission details: <%= @car.transmission %></p>
+	<p>Wheel and tyre details: <%= @car.wheels_tyres %></p>
+	<p>Other details: <%= @car.other_details %></p>
+</div>
 
-<p>Please note comments cannot be edited or deleted later so write carefully!</p>
+<div class="underlay1 well">
+	<h3>Comments for this car</h3>
 
-<%= form_for @comment do |f| %>
-	<p>
-		<%= f.text_area :comment_details, cols: 100, rows: 10%>
-		<%= f.hidden_field :car_id, :value => @car.id %>
-	</p>
-	<button>Post comment</button>
-<% end %>
+	<% @comments.each do |c| %>
+		<p><%= c.comment_details %></p>
+	<% end %>
 
-<p><%= link_to 'Show garages this car resides in', garage_path %></p>
+	<h3>Add a comment</h3>
+	<p>Please note comments cannot be edited or deleted so write carefully!</p>
+
+	<%= form_for @comment do |f| %>
+		<p>
+			<div class="darken_text"><%= f.text_area :comment_details, cols: 100, rows: 10%></div>
+			<%= f.hidden_field :car_id, :value => @car.id %>
+		</p>
+		<button class="btn btn-success">Post comment</button>
+	<% end %>
+</div>
+
+<div class="underlay1 well">
+	<% if @car.user_id == @current_user.id %>
+		<h3>Add a picture</h3>
+		<%= form_for @picture do |f| %>
+			<%= f.file_field :extra_picture %>
+			<%= f.hidden_field :car_id, :value => @car.id %>
+		<button class="btn btn-primary">Upload</button>
+		<% end %>
+	<% end %>
+</div>
+
+<button class="btn btn-default"><%= link_to 'Show garages this car resides in', garage_path %></button>
+
 <% if @car.user_id == @current_user.id %>
-	<p><%= link_to 'Edit car', edit_car_path %></p>
-	<p><%= link_to 'Delete car', @car, :method => :delete, :data => {:confirm => 'Are you sure?'}%></p>
+	<button class="btn btn-warning"><div><%= link_to 'Edit car', edit_car_path %></div></button>
+	<button class="btn btn-danger"><%= link_to 'Delete car', @car, :method => :delete, :data => {:confirm => 'Are you sure?'}%></button>
 <% end %>
+
+
+
+
+
+
+
+
+

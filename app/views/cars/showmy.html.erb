@@ -1,9 +1,14 @@
 <h2>My Cars</h2>
 
-<p>Click on a car to view its details</p>
+<% if @cars.first %>
+	<p>Click on a car to view its details</p>
+<% end %>
 
-<% @cars.each do |car| %>
-	<p><h3><a href="<%= car_path(car) %>"><%= car.name %></a></h3></p>
-	<p><%= car.primary_picture %></p>
-	<p><img src="<%= car.primary_picture %>" alt=""></p>
+<% if @cars.first %>
+	<% @cars.each do |car| %>
+		<div class="size1"><a href="<%= car_path(car) %>"><img src="<%= car.primary_picture %>"></a></div>
+	<% end %>
+<% else %>
+		<p>You do not have any cars yet</p>
+		<button class="btn btn-success btn-lg"><%= link_to 'New Car', new_car_path %></button>
 <% end %>

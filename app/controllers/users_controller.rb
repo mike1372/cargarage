@@ -21,8 +21,9 @@ class UsersController < ApplicationController
 
 		if @user.save
 			session[:user_id] = @user.id
-			redirect_to root_path
+			redirect_to root_path, :notice => 'New account created successfully'
 		else
+			flash.notice = 'Account not created, please try again'
 			render :new
 		end
 	end
@@ -39,8 +40,7 @@ class UsersController < ApplicationController
 	def pass
 	end
 
-	def password #I have a routung problem - cannot get here
-		#raise params.inspect
+	def password
 		@current_user.password = params[:new_password]
 		@current_user.password_confirmation = params[:password_confirmation]
 		@current_user.save

@@ -1,0 +1,109 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+	font-family: arial;
+	color: white;
+	text-align: center;
+	margin-top: 1em;
+	background: url('/assets/WindingRoad.jpg');
+	background-position: center top;
+	background-size: 100% auto;
+}
+
+nav ul {
+	padding-left: 0;
+}
+
+nav li {
+	display: inline-block;
+}
+
+.middle {
+	width: 100%;
+}
+
+.border {
+	border: 2.5px solid #0099FF;
+	border-radius: 5px;
+}
+
+.size1 {
+	display: inline-block;
+	width: 30%;
+	vertical-align: top;
+	margin: 10px;
+}
+
+.size1 img {
+	display: block;
+	width: 100%;
+	margin-bottom: 3px;
+	border: 2.5px solid #0099FF;
+	border-radius: 5px;
+}
+
+.size2 {
+	width: 60%;
+	margin: auto;
+	border: 2.5px solid #0099FF;
+	border-radius: 5px;
+}
+
+.underlay1 {
+	background-color: #484848;
+	width: 60%;
+	margin: auto;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+.underlay2 {
+	background-color: #484848;
+	width: 100%;
+	margin: auto;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+.underlay3 {
+	background-color: #484848;
+	width: 30%;
+	height: 50px;
+	margin: auto;
+}
+
+.underlay4 {
+	background-color: red;
+	width: 100%;
+	margin: auto;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+.whiten_text {
+	color: white;
+}
+
+.darken_text {
+	color: black;
+}
+.red_text {
+	color: red;
+}

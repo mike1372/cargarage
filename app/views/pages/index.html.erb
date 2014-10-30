@@ -1,7 +1,8 @@
 <h1>Car Garage Home</h1>
 
-<p>Click on a garage for more details</p>
-
-<% @garages.each do |garage| %>
-	<p><h3><a href="<%= garage_path(garage) %>"><%= garage.name %></a></h3></p>
+<% if logged_in? %> 
+	<p>Click on a garage for more details</p>
+	<% @garages.each do |garage| %>
+		<p><h3><a href="<%= garage_path(garage) %>"><%= garage.name %></a></h3></p>
+	<% end %>
 <% end %>

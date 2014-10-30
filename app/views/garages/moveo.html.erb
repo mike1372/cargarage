@@ -1,9 +1,14 @@
-<h2>Car Move</h2>
+<h2>Move Car Out</h2>
 
-<h3>Please select a car to move out of the garage</h3>
-
-<%= form_tag moveout_path do %>
-<%= collection_radio_buttons :car, :car_ids, @garage.cars, :id, :name %>
-<%= hidden_field_tag :garage_id, @garage.id, :name => 'car[garage_id]' %>
-<button>Select</button>
+<% if @cars.first # Does not behave properly - still finds cars when there are none in the garage %>
+	<div class="underlay1 well">
+		<h3>Please select a car to move out of the garage</h3>
+		<%= form_tag moveout_path do %>
+		<%= collection_radio_buttons :car, :car_ids, @garage.cars, :id, :name %>
+		<%= hidden_field_tag :garage_id, @garage.id, :name => 'car[garage_id]' %>
+		<button class="btn btn-primary">Select</button>
+		<% end %>
+	</div>
+<% else %>
+	<p>You have no cars to move out of this garage</p>
 <% end %>

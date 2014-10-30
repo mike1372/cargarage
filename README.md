@@ -86,4 +86,7 @@ The app shoud:
   Notify a user when they enter details incorrectly such as wrong usernames/passwords or incomplete forms
   Notify a user if they click on a link which does not return any results and prompt them to create the relevant object
 
+RESOURCES
+=========
 
+Car query API: http://www.carqueryapi.com

@@ -1,14 +1,16 @@
 <h2>Show Garage</h2>
 
-<p>Garage name: <%= @garage.name %></p>
-<p>Gragae theme: <%= @garage.theme %></p>
-<p>Garage details: <%= @garage.details %></p>
+<div class="underlay1 well">
+	<p>Garage name: <%= @garage.name %></p>
+	<p>Gragae theme: <%= @garage.theme %></p>
+	<p>Garage details: <%= @garage.details %></p>
+</div>
 
-<p><%= link_to 'Show cars in this garage', show_garage_path(:garage_id => @garage.id) %></p>
+<button class="btn btn-default"><%= link_to 'Show cars in this garage', show_garage_path(:garage_id => @garage.id) %></button>
 
 <% if @garage.user_id == @current_user.id %>
-	<p><%= link_to 'Move a car into this garage', move_path(:garage_id => @garage.id) %></p>
-	<p><%= link_to 'Move a car out of this garage', moveout_path(:garage_id => @garage.id) %></p>
-	<p><%= link_to 'Edit garage', edit_garage_path %></p>
-	<p><%= link_to 'Delete garage', @car, :method => :delete, :data => {:confirm => 'Are you sure?'}%></p>
+	<button class="btn btn-default"><%= link_to 'Move a car into this garage', move_path(:garage_id => @garage.id) %></button>
+	<button class="btn btn-default"><%= link_to 'Move a car out of this garage', moveout_path(:garage_id => @garage.id) %></button>
+	<button class="btn btn-warning"><%= link_to 'Edit garage', edit_garage_path %></button>
+	<button class="btn btn-danger"><%= link_to 'Delete garage', @car, :method => :delete, :data => {:confirm => 'Are you sure?'}%></button>
 <% end %>

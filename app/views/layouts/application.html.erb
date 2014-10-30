@@ -9,32 +9,45 @@
 	<script type="text/javascript" src="http://www.carqueryapi.com/js/carquery.0.3.3.js"></script>
 </head>
 <body>
+	<div class="container">
+		<div class="underlay2 well">
+			<nav>
+				<ul class="nav nav-pills">
+					<li><%= link_to 'Home', root_path %></li>
+					<li><%= link_to 'About', '/about' %></li>
 
-	<ul>
-		<li><%= link_to 'Home', root_path %></li>
-		<li><%= link_to 'About', '/about' %></li>
+					<% if logged_in? %> 
+						<li><%= link_to 'New Car', new_car_path %></li>
+						<li><%= link_to 'New Garage', new_garage_path %></li>
+						<li><%= link_to 'Show All Cars', show_all_cars_path %></li>
+						<li><%= link_to 'Show All Garages', show_all_garages_path %></li>
+						<li><%= link_to 'Show My Cars', show_my_cars_path %></li>
+						<li><%= link_to 'Show My Garages', show_my_garages_path %></li>
+						<li><%= link_to 'My Account', user_path(current_user.id) %></li>
+					  <li><%= link_to 'logout', login_path, :method => :delete, :data => {:confirm => 'are you sure?'} %></li>
+					  <li class="middle"><%= link_to 'Get details for popular makes and models (opens in new window)', lookup_path, :target => '_blank' %></li>
+				  <% else %>
+				  	<li><%= link_to 'Sign Up', sign_up_path %></li>
+				  	<li><%= link_to 'login', login_path %></li>
+				  <% end %>
+				</ul>
+			</nav>
+		</div>
 
-		<% if logged_in? %> 
-			<li><%= link_to 'New Car', new_car_path %></li>
-			<li><%= link_to 'New Garage', new_garage_path %></li>
-			<li><%= link_to 'Show All Cars', show_all_cars_path %></li>
-			<li><%= link_to 'Show All Garages', show_all_garages_path %></li>
-			<li><%= link_to 'Show My Cars', show_my_cars_path %></li>
-			<li><%= link_to 'Show My Garages', show_my_garages_path %></li>
-			<li><%= link_to 'My Account', user_path(current_user.id) %></li>
-		  <li><%= link_to 'logout', login_path, :method => :delete, :data => { :confirm => 'are you sure?' } %></li>
-		  <li><%= link_to 'Search for popular car details', "" %></li>
-	  <% else %>
-	  	<li><%= link_to 'Sign Up', sign_up_path %></li>
-	  	<li><%= link_to 'login', login_path %></li>
-	  <% end %>
-	</ul>
+		<% if logged_in? %>
+			<p>Welcome, &nbsp<%= current_user.first_name %><p>
+		<% end %>
 
-	<% if logged_in? %>
-		<p>Welcome, &nbsp<%= current_user.first_name %><p>
-	<% end %>
+		<% flash.each do |key, value| %>
+			<% if value == 'Incorrect username or password, please try again' || value == 'Account not created, please try again' %>
+				<div class="underlay4 well"><%= value %></div>
+			<% else %>
+				<div class="underlay2 well"><%= value %></div>
+			<% end %>
+		<% end %>
 
-<%= yield %>
+		<%= yield %>
 
+	</div>
 </body>
 </html>
