@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 user = User.new
-user.first_name = Steve
-user.last_name = Smith
-user.email = steve@isp.com
-user.username = steve
-user.password_digest = 1372
+user.first_name = 'Steve'
+user.last_name = 'Smith'
+user.email = 'steve@isp.com'
+user.username = 'steve'
+user.password = '1372'
 user.save
