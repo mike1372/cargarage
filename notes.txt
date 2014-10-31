@@ -8,33 +8,20 @@ Ask about how to add test data again
 TO DO
 -----
 Add a set of photos for garages for users to select
-Need to find out how to DRY up the forms again - see the cookbok example
 User deletion: add a separate page to confirm
 Change showall to index
-Test all flash messages
-Show primary car pictures in each garage (small size)
-Get page reload working for picture deletion
-Make pictures clickable to show a full size image
-Add some back buttons
-
-NOTE - PROJECT SPEC NEEDS THE FOLLOWING:
-Handle invalid data
-Get README done in markdown
-Correct documentation - add a Resources section
-Go through code and comment/clean up where needed
-
-
-CSS ISSUES
-----------
-Show car page - one button not showing text and choose file - how to style, also get to centre
-Change text colour for top buttons and form boxes
-Car images on show page all over the place
-Main page image does not load
-
+Show primary car pictures on show garages page (smaller size)
+Clean and DRY up code and add comments where needed
+Add content to the About page
+Add some content to the home page when logged out
+Style page headings
 
 ISSUES
 ------
-People can add an account with a blank username - is there proper error checking on this feature?
+Border not working properly for car primary picture
+Add picture (from file) buttons are to the left
+Moving cars in and out of garages - some logic for handling "no cars" not working properly
+Sign in errors - an extra array appears, need to get rid of it
 
 EXTENSIONS
 ----------
@@ -46,20 +33,12 @@ Note raise params.inspect
 
 DAILY DETAILS
 -------------
-THU - thought of idea and prepared sales pitch
-FRI - presented pitch to class
-SAT - Worked on models, decided to change idea to something simpler, completed modelling
-SUN - created database and coded all basic site pages
-MON - added functionality for complex operations where releations were needed between models
-TUE - completed main site functionality, added account pages, added photo uploading, added comments (not quite working)
-WED - fixed comments functionality, added API (car details), added multiple photos (new model)
-THU - complete (invalid) data testing, do CSS in Rails recap and then style the site, complete documentation and code cleanup
-
-Excerpt from the project spec:
-README.md
-Projects need a readme file in markdown explaining their project. Explain your concept and data model. What problem are you solving? What gems and/or APIs are you using?
-This needs a how and why of what they wanted to solve, how they built, problems, tech used.
-This file should include the elements of your project plan.
-Add your list of resources, research, and documentation links to this file.
-If you're including a separate file or folder for your data model, put it in a file or folder called data_model with the proper extensions.
-If you're including a separate file or folder for your wireframes, put it in a file or folder called wireframe with the proper extensions.
+THU 23/10 - thought of idea and prepared sales pitch
+FRI 24/10 - presented pitch to class
+SAT 25/10 - Worked on models, decided to change idea to something simpler, completed modelling
+SUN 26/10 - created database and coded all basic site pages
+MON 27/10 - added functionality for complex operations where releations were needed between models
+TUE 28/10 - completed main site functionality, added account pages, added photo uploading, added comments (not quite working)
+WED 29/10 - fixed comments functionality, added API (car details), added multiple photos (new model)
+THU 30/10 - completed (invalid) data testing, did CSS in Rails recap and then styled the site
+FRI 31/10 - deployed to Heroku, resolved issues therein, completed documentation and code cleanup (well not quite)
