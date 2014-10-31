@@ -4,7 +4,7 @@ WDI PROJECT ONE - CAR GARAGE
 SYNOPSIS
 ========
 
-A web app that allows people to post detaisl of their cars to share with others. Users will be able to put up photos and technical details of their cars, create and manipulate garages for them to put their cars into (analogous to a photo album) as well as access detailed technical information about popular car makes and models to assist them in comleting their car entries.
+A web app that allows people to post details of their cars to share with others. Users will be able to put up photos and technical details of their cars, create and manipulate garages for them to put their cars into (analogous to a photo album) as well as access detailed technical information about popular car makes and models to assist them in comlpeting their car entries.
 
 MODELS
 ======
