@@ -29,7 +29,7 @@ var CarQuery = function(){}
 
 CarQuery.prototype = {
 
-    base_url: 		"http://www.carqueryapi.com/api/0.3/",
+    base_url: 		"https://www.carqueryapi.com/api/0.3/",
     body:		"",
     body_id:		"cq-body",
     color_ext_select_id:null,
