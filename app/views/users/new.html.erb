@@ -1,12 +1,12 @@
 <h2>Sign Up</h2>
 
-<div class="underlay1 well">
-	<% if !@user.errors.empty? %>
+<% if !@user.errors.empty? %>
+	<div class="underlay1 well">
 		<%= @user.errors.full_messages.each do |msg| %>
 			<h3 class="error red_text"><%= msg %></h3>
 		<% end %>
-	<% end %>
-</div>
+	</div>
+<% end %>
 
 <%= form_tag '/sign_up' do |f| %>
 	<p><%= label_tag :first_name %></p>
